@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<head>
+    <title>Sudoku</title>
+    <link rel = stylesheet type = "text/css" href="style.css">
+<!-- This image was downloaded from https://www.iconfinder.com/ -->
+    <link rel="shortcut icon" href = "images/1448298971_sudoku_free.png">
+<!-- https://www.iconfinder.com/icons/204927/sudoku_icon -->
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/jquery.timeago.js"></script>
+</head>
+<body>
+    <header>
+        <p>Sudoku</p>
+    </header>
+    <table id = "main_content" class = "unselectable">
+        <tbody>
+            <tr>
+                <td id = "timer">
+                    <div>*Timer here*</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table id = "field">
+					<tr>
+						<td>
+							<table id = "1", class = "block">
+								<tr>
+									<td id = "11"></td>
+									<td id = "12"></td>
+									<td id = "13"></td>
+								</tr>
+								<tr>
+									<td id = "21"></td>
+									<td id = "22"></td>
+									<td id = "23"></td>
+								</tr>
+								<tr>
+									<td id = "31"></td>
+									<td id = "32"></td>
+									<td id = "33"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table id = "2", class = "block">
+								<tr>
+									<td id = "14"></td>
+									<td id = "15"></td>
+									<td id = "16"></td>
+								</tr>
+								<tr>
+									<td id = "24"></td>
+									<td id = "25"></td>
+									<td id = "26"></td>
+								</tr>
+								<tr>
+									<td id = "34"></td>
+									<td id = "35"></td>
+									<td id = "36"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table id = "3", class = "block">
+								<tr>
+									<td id = "17"></td>
+									<td id = "18"></td>
+									<td id = "19"></td>
+								</tr>
+								<tr>
+									<td id = "27"></td>
+									<td id = "28"></td>
+									<td id = "29"></td>
+								</tr>
+								<tr>
+									<td id = "37"></td>
+									<td id = "38"></td>
+									<td id = "39"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table id = "4", class = "block">
+								<tr>
+									<td id = "41"></td>
+									<td id = "42"></td>
+									<td id = "43"></td>
+								</tr>
+								<tr>
+									<td id = "51"></td>
+									<td id = "52"></td>
+									<td id = "53"></td>
+								</tr>
+								<tr>
+									<td id = "61"></td>
+									<td id = "62"></td>
+									<td id = "63"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table id = "5", class = "block">
+								<tr>
+									<td id = "44"></td>
+									<td id = "45"></td>
+									<td id = "46"></td>
+								</tr>
+								<tr>
+									<td id = "54"></td>
+									<td id = "55"></td>
+									<td id = "56"></td>
+								</tr>
+								<tr>
+									<td id = "64"></td>
+									<td id = "65"></td>
+									<td id = "66"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table id = "6", class = "block">
+								<tr>
+									<td id = "47"></td>
+									<td id = "48"></td>
+									<td id = "49"></td>
+								</tr>
+								<tr>
+									<td id = "57"></td>
+									<td id = "58"></td>
+									<td id = "59"></td>
+								</tr>
+								<tr>
+									<td id = "67"></td>
+									<td id = "68"></td>
+									<td id = "69"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table id = "7", class = "block">
+								<tr>
+									<td id = "71"></td>
+									<td id = "72"></td>
+									<td id = "73"></td>
+								</tr>
+								<tr>
+									<td id = "81"></td>
+									<td id = "82"></td>
+									<td id = "83"></td>
+								</tr>
+								<tr>
+									<td id = "91"></td>
+									<td id = "92"></td>
+									<td id = "93"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table id = "8", class = "block">
+								<tr>
+									<td id = "74"></td>
+									<td id = "75"></td>
+									<td id = "76"></td>
+								</tr>
+								<tr>
+									<td id = "84"></td>
+									<td id = "85"></td>
+									<td id = "86"></td>
+								</tr>
+								<tr>
+									<td id = "94"></td>
+									<td id = "95"></td>
+									<td id = "96"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table id = "9", class = "block">
+								<tr>
+									<td id = "77"></td>
+									<td id = "78"></td>
+									<td id = "79"></td>
+								</tr>
+								<tr>
+									<td id = "87"></td>
+									<td id = "88"></td>
+									<td id = "89"></td>
+								</tr>
+								<tr>
+									<td id = "97"></td>
+									<td id = "98"></td>
+									<td id = "99"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+                </td>
+            </tr>
+            <tr id = "menu">
+                <td>
+                    <a id = "undo">Undo</a>
+                    <a id = "reset">Reset</a>
+                    <a id = "new_game">New Game</a>
+                    <a id = "notes">Notes</a> 
+                    <a id = "check">Check</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <div>Betekhtin Artem, AMPC SPBU 2015<br>
+            Contact information:&nbsp;<a     href="mailto:st040186@student.spbu.com">st040186@student.spbu.com</a><div>
+    </footer>
+    <table id = "select", class = "unselectable">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+</table>
+            
+</body>

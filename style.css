@@ -1,0 +1,198 @@
+/*JAPANESE FONT*/
+
+@font-face {
+    font-family: japanese;
+/* This font was downloaded from http://www.cufonfonts.com/ */
+    src: url(fonts/bonzai-webfont.woff);
+/* http://www.cufonfonts.com/en/font/5591/bonzai */
+}
+
+/*COMMON*/
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+/*BODY*/
+
+body{
+    margin: 0;
+    padding: 0;
+/*  
+    This is darker version of image downloaded from 
+    http://nortago.deviantart.com/art/Bg-Texture-wood-38841113
+*/
+    background-image: url(images/wood_background.jpg);
+/* More images of this author: http://nortago.deviantart.com/ */
+}
+
+/*HEADER*/
+
+header{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header p{
+    font-family: japanese;
+    margin: 0;
+    padding: 0;
+    color: #E8DEC7;
+    font-size: 100px;
+}
+
+/*MAIN CONTENT*/
+
+#main_content{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    
+    
+/*    
+ ========================================================
+ This pattern is downloaded from www.subtlepatterns.com 
+ If you need more, that's where to get'em.
+ ========================================================
+*/  
+    background-image: url(images/grey_jean.png);
+    
+/*  http://subtlepatterns.com/grey-jean/ */    
+    
+    width: 100%;
+    border-bottom: 20px solid #672a2a;
+    border-top: 20px solid #672a2a;
+}
+
+/*TIMER*/
+
+#timer div{
+    font-family: japanese;
+    font-size: 32px;
+    text-align: center;
+    width: 150px;;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 1px grey solid;
+    color:#524f4f;
+    background-color: #dedede;
+    opacity: 0.75;  
+}
+
+/*FIELD*/
+
+#field{
+    border-radius: 20px;
+    border-spacing: 0px;
+    border: 4px grey solid;
+    min-width: 495px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.block{
+    border-collapse: collapse;
+}
+
+.cell{
+    cursor: pointer;
+    font-family: japanese;
+    font-size: 40px;
+    text-align: center;
+    color: grey;
+    border-collapse: collapse;
+    border: 1px grey dashed;
+    width: 50px;
+    height: 50px;
+}
+
+.cell:hover{
+    background-color: #acacac;
+}
+
+.darkened{
+    background-color: #e5e5e5;
+}
+
+.cell.changeable{
+    color: #d00000;
+}
+
+.cell.error{
+    background-color: rgba(208, 0, 0, 0.28);
+}
+
+/*MENU*/
+
+#menu{
+    font-family: japanese;
+    text-align: center;
+    font-size: 24px;
+    
+}
+
+#menu a{
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#menu a:hover{
+    background-color: #bfbfbf;
+    border-radius: 7px;
+    color: azure;
+}
+
+#notes.toggled{
+    color: #e60808;
+}
+
+#notes.toggled:hover{
+    color: #a20404;
+}
+
+/*FOOTER*/
+
+footer a{
+    color:cadetblue;
+}
+
+footer div{
+    text-align: right;
+    color: azure;
+}
+
+/*DIGIT SELECT*/
+
+#select{
+    cursor: pointer;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    background-color: #672a2a; 
+    border: 2px grey solid;
+    text-align: center;
+}
+
+.choice{
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 9px 5px 9px;
+}
+
+.choice:hover{
+    background: #d3d5d6;
+    text-decoration: none;
+}

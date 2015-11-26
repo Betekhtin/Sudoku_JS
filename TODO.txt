@@ -1,0 +1,7 @@
+- Notes
+- Timer
+- Refine level generator (difficulty, solvability)
+- Add info for user
+- Refine digit selector
+- Resizeable field
+- Cross browser (IE)
