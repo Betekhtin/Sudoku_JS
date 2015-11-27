@@ -56,6 +56,12 @@ function generateSudoku(table) {
         //console.log("Rows swaped(" + i + "," + j + ")");
     }
     
+    function swap_cols_small(){
+        transponing();
+        swap_rows_small();
+        transponing();
+    }
+    
     function swap_rows_area() {
         var i = Math.round(Math.random() * 2),
             j,
@@ -79,17 +85,24 @@ function generateSudoku(table) {
         //console.log("Row areas swaped (" + i + "," + j + ")");
     }
     
+    function swap_cols_area() {
+        transponing();
+        swap_rows_area();
+        transponing();
+    }
+    
     mix_func = [transponing,
                 swap_rows_small,
-                swap_rows_area];
-                
+                swap_cols_small,
+                swap_rows_area,
+                swap_cols_area];
     
-    for (i = 0; i < 1000; ++i) {
-        j = Math.floor(Math.random() * 3);
+    for (i = 0; i < 10000; ++i) {
+        j = Math.floor(Math.random() * 5);
         mix_func[j].call();
     }
     
-    for (i = 0; i < 40; ++i) {
+    for (i = 0; i < 45; ++i) {
         do {
             j = Math.floor(Math.random() * 9);
             k = Math.floor(Math.random() * 9);
@@ -103,6 +116,31 @@ function generateSudoku(table) {
     return table;
 }
 
+function startTime(intervalID) {
+    "use strict";
+    var seconds = 0,
+        minutes = 0,
+        hours = 0,
+        time;
+    intervalID = setInterval(function () {
+        ++seconds;
+        if (seconds > 59) {
+            seconds -= 60;
+            ++minutes;
+        }
+        if (minutes > 59) {
+            minutes -= 60;
+            ++hours;
+        }
+        if (hours > 0) {
+            time = ((hours < 10) ? "0" + hours : hours) + ":" + ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
+        } else {
+            time = ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
+        }
+        $("#timer div").text(time);
+    }, 1000);
+}
+
 $(document).ready(function () {
     "use strict";
     
@@ -112,12 +150,15 @@ $(document).ready(function () {
     $('#select tr td').addClass("choice");
     $('#2 .cell, #4 .cell, #6 .cell, #8 .cell').addClass("darkened");
     $('.cell').html('&nbsp;&nbsp;');
-
+    
     var notes_mode = false,
         moves = [],
         level = [],
         i = 1,
-        j = 1;
+        j = 1,
+        intervalID;
+    
+    startTime(intervalID);
     
     /*First level*/
     level = generateSudoku(level);
@@ -135,7 +176,7 @@ $(document).ready(function () {
     
     /*Digit selection*/
     $('.cell').on('click', function () {
-        console.log($(this).attr('id') + " " + $(this).attr("class"));
+        //console.log($(this).attr('id') + " " + $(this).attr("class"));
         if ($(this).hasClass("changeable")) {
             $('.error').removeClass("error");
             $('.waiting').removeClass("waiting");
@@ -193,6 +234,8 @@ $(document).ready(function () {
     
     /*New game*/
     $('#new_game').on('click', function () {
+        clearInterval(intervalID);
+        startTime(intervalID);
         level = generateSudoku(level);
         $('.cell').html('&nbsp;&nbsp;');
         $('.error').removeClass("error");

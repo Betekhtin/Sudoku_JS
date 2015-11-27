@@ -1,5 +1,7 @@
+- Fix check solution (Check elements in block with current cell)
+- Fix timer (clearInterval)
 - Notes
-- Timer
+- Delete cell value
 - Refine level generator (difficulty, solvability)
 - Add info for user
 - Refine digit selector

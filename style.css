@@ -38,6 +38,8 @@ body{
 header{
     margin-left: auto;
     margin-right: auto;
+    cursor: default;
+    
 }
 
 header p{
@@ -75,10 +77,11 @@ header p{
 /*TIMER*/
 
 #timer div{
+    cursor: pointer;
     font-family: japanese;
     font-size: 32px;
     text-align: center;
-    width: 150px;;
+    width: 150px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
