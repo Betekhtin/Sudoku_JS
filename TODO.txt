@@ -1,9 +1,10 @@
 - Fix check solution (Check elements in block with current cell)
-- Fix timer (clearInterval)
 - Notes
 - Delete cell value
-- Refine level generator (difficulty, solvability)
+- Refine level generator (digits delete, difficulty, solvability)
+- Win/Error message
 - Add info for user
 - Refine digit selector
 - Resizeable field
-- Cross browser (IE)
+- Browser check (Opera, Chrome)
+- Check work on mobile devices (or write message to mobile users)

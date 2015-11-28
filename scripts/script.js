@@ -56,7 +56,7 @@ function generateSudoku(table) {
         //console.log("Rows swaped(" + i + "," + j + ")");
     }
     
-    function swap_cols_small(){
+    function swap_cols_small() {
         transponing();
         swap_rows_small();
         transponing();
@@ -116,29 +116,31 @@ function generateSudoku(table) {
     return table;
 }
 
-function startTime(intervalID) {
+function startTime() {
     "use strict";
+    $("#timer div").text("00:00");
     var seconds = 0,
         minutes = 0,
         hours = 0,
-        time;
-    intervalID = setInterval(function () {
-        ++seconds;
-        if (seconds > 59) {
-            seconds -= 60;
-            ++minutes;
-        }
-        if (minutes > 59) {
-            minutes -= 60;
-            ++hours;
-        }
-        if (hours > 0) {
-            time = ((hours < 10) ? "0" + hours : hours) + ":" + ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
-        } else {
-            time = ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
-        }
-        $("#timer div").text(time);
-    }, 1000);
+        time,
+        intervalID = setInterval(function () {
+            ++seconds;
+            if (seconds > 59) {
+                seconds -= 60;
+                ++minutes;
+            }
+            if (minutes > 59) {
+                minutes -= 60;
+                ++hours;
+            }
+            if (hours > 0) {
+                time = ((hours < 10) ? "0" + hours : hours) + ":" + ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
+            } else {
+                time = ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
+            }
+            $("#timer div").text(time);
+        }, 1000);
+    return intervalID;
 }
 
 $(document).ready(function () {
@@ -158,7 +160,7 @@ $(document).ready(function () {
         j = 1,
         intervalID;
     
-    startTime(intervalID);
+    intervalID = startTime();
     
     /*First level*/
     level = generateSudoku(level);
@@ -235,7 +237,7 @@ $(document).ready(function () {
     /*New game*/
     $('#new_game').on('click', function () {
         clearInterval(intervalID);
-        startTime(intervalID);
+        intervalID = startTime();
         level = generateSudoku(level);
         $('.cell').html('&nbsp;&nbsp;');
         $('.error').removeClass("error");
