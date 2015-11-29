@@ -1,4 +1,3 @@
-- Fix check solution (Check elements in block with current cell)
 - Notes
 - Delete cell value
 - Refine level generator (digits delete, difficulty, solvability)

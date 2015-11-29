@@ -263,14 +263,15 @@ $(document).ready(function () {
             j = 1,
             k = 1,
             l = 1,
-            max_X,
-            max_Y,
+            min_X,
+            min_Y,
             error = false,
             field_full = true,
             current_cell;
         
         for (i = 1; i <= 9; ++i) {
             for (j = 1; j <= 9; ++j) {
+                //console.log("Checking cell: " + i + j + "\n");
                 current_cell = $("#" + i + j);
                 for (k = 1; k <= 9; ++k) {
                     if (current_cell.html() !== '&nbsp;&nbsp;') {
@@ -291,25 +292,27 @@ $(document).ready(function () {
                     }
                 }
                 
-                /*
                 if (current_cell.html() !== '&nbsp;&nbsp;') {
-                    max_X = current_cell.closest("table tl td").first().attr('id')[1];
-                    max_Y = current_cell.closest("table tl td").first().attr('id')[2];
                     
-                    for (k = max_X; k <= max_X + 2; ++k) {
-                        for (l = max_Y; l <= max_Y + 2; ++l) {
+                    min_X = Math.floor((i - 1) / 3) * 3;
+                    min_Y = Math.floor((j - 1) / 3) * 3;
+                
+                    //console.log(min_X + " " + min_Y);
+                    
+                    for (k = min_X + 1; k <= min_X + 3; ++k) {
+                        for (l = min_Y + 1; l <= min_Y + 3; ++l) {
                             if (k !== i && l !== j && current_cell.text() === $("#" + k + l).text()) {
                                 current_cell.addClass("error");
-                                $("#" + k + j).addClass("error");
+                                $("#" + k + l).addClass("error");
                                 error = true;
                             }
                         }
                     }
-                } else {
-                    field_full = false;
+                    
                 }
-                */
+                
             }
+            
         }
         if (field_full && !error) {
             alert("SUCCESS!!!");
