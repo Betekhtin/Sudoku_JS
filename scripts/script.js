@@ -148,6 +148,7 @@ $(document).ready(function () {
     
     /*Starting class implementaition*/
     $('#select').hide();
+    $('#success_message').hide();
     $('.block tr td').addClass("cell changeable");
     $('#select tr td').addClass("choice");
     $('#2 .cell, #4 .cell, #6 .cell, #8 .cell').addClass("darkened");
@@ -236,6 +237,7 @@ $(document).ready(function () {
     
     /*New game*/
     $('#new_game').on('click', function () {
+        $(".solution").removeClass("solution");
         clearInterval(intervalID);
         intervalID = startTime();
         level = generateSudoku(level);
@@ -315,8 +317,15 @@ $(document).ready(function () {
             
         }
         if (field_full && !error) {
-            alert("SUCCESS!!!");
+            $(".changeable").addClass("solution");
+            $(".changeable").removeClass("changeable");
+            $('#success_message').fadeIn(50);
+            clearInterval(intervalID);
         }
+    });
+    
+    $("#success_message").on('click', function () {
+        $('#success_message').fadeOut(50);
     });
     
 });

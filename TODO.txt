@@ -1,7 +1,6 @@
 - Notes
 - Delete cell value
 - Refine level generator (digits delete, difficulty, solvability)
-- Win/Error message
 - Add info for user
 - Refine digit selector
 - Resizeable field
