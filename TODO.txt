@@ -1,8 +1,6 @@
 - Notes
-- Delete cell value
 - Refine level generator (digits delete, difficulty, solvability)
 - Add info for user
-- Refine digit selector
 - Resizeable field
 - Browser check (Opera, Chrome)
 - Check work on mobile devices (or write message to mobile users)

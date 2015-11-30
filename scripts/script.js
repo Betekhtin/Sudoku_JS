@@ -189,8 +189,8 @@ $(document).ready(function () {
             $('#select').hide();
             $('#select').css({
                 position: "absolute",
-                top: pos.top + "px",
-                left: pos.left + "px"
+                top: pos.top - height / 3 + "px",
+                left: pos.left - width / 4 + "px"
             });
             $(this).addClass("waiting");
             $('#select').fadeIn(200);
@@ -206,7 +206,11 @@ $(document).ready(function () {
         var i = $('.waiting').attr("id")[0],
             j = $('.waiting').attr("id")[1];
         moves.push({cell_number: $('.waiting').attr('id'), previous_state: $('.waiting').text()});
-        $('.waiting').text($(this).text());
+        if ($(this).attr('id') !== "delete") {
+            $('.waiting').text($(this).text());
+        } else {
+            $('.waiting').html('&nbsp;&nbsp;');
+        }
         $('.waiting').removeClass("waiting");
         $('#select').fadeOut(200);
     });

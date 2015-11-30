@@ -189,6 +189,14 @@ footer div{
     text-align: center;
 }
 
+#delete{
+    background: grey;
+}
+
+#delete:hover{
+    background: #d3d5d6;
+}
+
 .choice{
     color: #ffffff;
     font-size: 15px;
