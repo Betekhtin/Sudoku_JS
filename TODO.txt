@@ -1,6 +1,4 @@
-- Notes
 - Refine level generator (digits delete, difficulty, solvability)
-- Add info for user
 - Resizeable field
-- Refine inappropriate browser message
+- Refine message about inappropriate browser
 - Check work on mobile devices (or write message to mobile users)

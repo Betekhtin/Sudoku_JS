@@ -208,7 +208,7 @@
                     <a id = "undo">Undo</a>
                     <a id = "reset">Reset</a>
                     <a id = "new_game">New Game</a>
-                    <a id = "notes">Notes</a> 
+                    <a id = "info">Info</a> 
                     <a id = "check">Check</a>
                 </td>
             </tr>
@@ -216,7 +216,7 @@
     </table>
     <footer>
         <div>Betekhtin Artem, AMPC SPBU 2015<br>
-            Contact information:&nbsp;<a     href="mailto:st040186@student.spbu.com">st040186@student.spbu.com</a></div>
+            Contact information:&nbsp;<a     href="mailto:st040186@student.spbu.ru">st040186@student.spbu.ru</a></div>
     </footer>
     <table id = "select", class = "unselectable">
 		<tr>
@@ -251,6 +251,31 @@
                 </td>
             </tr>
         </table>
+    </div>
+    <div id = "info_message">
+        <div class = "content">
+            <table>
+                <tr>
+                    <td>
+                        <span><b>RULES:</b></span> </br></br>
+                    The objective of sudoku is to enter a digit from 1 through 9 in each cell, in such a way that: </br>
+                        <ul>
+                            <li>Each horizontal <b>row</b> (shown in pink) contains each digit exactly <b>once</b></li>
+                            <li>Each vertical <b>column</b> (shown in yellow) contains each digit exactly <b>once</b></li>
+                            <li>Each subgrid or <b>region</b> (shown in green) contains each digit exactly <b>once</b></li>
+                        </ul>
+                        In each sudoku puzzle, several digits have already been entered (the "givens"); these may <b>not</b> be changed. </br> </br>
+            
+                        The puzzler's job is to fill the remainder of the grid with digits –respecting, of course, the three constraints mentioned earlier.</br>
+                    </td>
+                    <td>
+                    <!-- This image was downloaded from http://www.sudoku.ws/ -->
+                        <img class="image" src = "images/empty.png">
+                    <!-- link: http://www.sudoku.ws/empty.png -->    
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
