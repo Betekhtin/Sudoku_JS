@@ -2,5 +2,5 @@
 - Refine level generator (digits delete, difficulty, solvability)
 - Add info for user
 - Resizeable field
-- Browser check (Opera, Chrome)
+- Refine inappropriate browser message
 - Check work on mobile devices (or write message to mobile users)

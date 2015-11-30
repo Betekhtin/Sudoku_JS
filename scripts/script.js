@@ -145,6 +145,16 @@ function startTime() {
 
 $(document).ready(function () {
     "use strict";
+    var notes_mode = false,
+        moves = [],
+        level = [],
+        i = 1,
+        j = 1,
+        intervalID,
+        isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if (!isChrome) {
+        $("html").html("It seems that this application doesn't support your version of browser. </br> You can download an appropriate browser from <a href = \"https://www.google.com/chrome/\">here.</a>");
+    }
     
     /*Starting class implementaition*/
     $('#select').hide();
@@ -153,13 +163,6 @@ $(document).ready(function () {
     $('#select tr td').addClass("choice");
     $('#2 .cell, #4 .cell, #6 .cell, #8 .cell').addClass("darkened");
     $('.cell').html('&nbsp;&nbsp;');
-    
-    var notes_mode = false,
-        moves = [],
-        level = [],
-        i = 1,
-        j = 1,
-        intervalID;
     
     intervalID = startTime();
     
