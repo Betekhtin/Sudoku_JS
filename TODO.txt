@@ -1,4 +1,2 @@
 - Refine level generator (digits delete, difficulty, solvability)
-- Resizeable field
-- Refine message about inappropriate browser
 - Check work on mobile devices (or write message to mobile users)

@@ -152,7 +152,7 @@ $(document).ready(function () {
         intervalID,
         isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     if (!isChrome) {
-        $("html").html("It seems that this application doesn't support your version of browser. </br> You can download an appropriate browser from <a href = \"https://www.google.com/chrome/\">here.</a>");
+        $("#main_content").html("It seems that this application doesn't support your version of browser. </br> You can download an appropriate browser from <a href = \"https://www.google.com/chrome/\">here.</a>");
     }
     
     /*Starting class implementaition*/
